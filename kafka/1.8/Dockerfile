@@ -1,4 +1,4 @@
-FROM debezium/base
+FROM us-docker.pkg.dev/structionsite/debezium/base
 
 LABEL maintainer="Debezium Community"
 

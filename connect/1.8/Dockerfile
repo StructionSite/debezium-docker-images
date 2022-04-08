@@ -1,4 +1,4 @@
-FROM debezium/connect-base:1.8
+FROM us-docker.pkg.dev/structionsite/debezium/connect-base:1.8
 
 LABEL maintainer="Debezium Community"
 
@@ -23,3 +23,6 @@ RUN docker-maven-download debezium mongodb "$DEBEZIUM_VERSION" "$MONGODB_MD5" &&
     docker-maven-download debezium-additional db2 db2 "$DEBEZIUM_VERSION" "$DB2_MD5" && \
     docker-maven-download debezium-additional vitess vitess "$DEBEZIUM_VERSION" "$VITESS_MD5" && \
     docker-maven-download debezium-optional scripting "$DEBEZIUM_VERSION" "$SCRIPTING_MD5"
+
+RUN docker-maven-download central software/amazon/glue schema-registry-kafkaconnect-converter 1.1.9 455acf63e9bda482373e23e0a13e6711 && \
+    docker-maven-download central software/amazon/glue jsonschema-kafkaconnect-converter 1.1.9 5885251c0b050f0d8ed9279496619e64
