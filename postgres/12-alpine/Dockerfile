@@ -1,4 +1,4 @@
-FROM postgres:12-alpine
+FROM postgis/postgis:12-3.1-alpine
 
 LABEL maintainer="Debezium Community"
 ENV PLUGIN_VERSION=v1.9.0.Final
